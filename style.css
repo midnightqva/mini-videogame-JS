@@ -6,6 +6,8 @@ body {
     padding: 0;
 }
 
+
+
 .game-container {
     display: flex;
     align-items: center;
@@ -56,6 +58,55 @@ p {
     margin: 0;
     width: 100%;
 }
+
+#continue{
+    position: absolute;
+    width: 100%;
+    top: 150px;
+    text-align: center;
+}
+#question{
+    position: relative;
+    width: 50%;
+    height: 50px;
+    padding-top: 15px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: indigo;
+    background-color: #feff9d ;
+}
+.respuestas{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: indigo;
+    align-items: center; 
+}
+.answers{
+    background-color: #feff9d;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.yes{
+    width: 10%;
+    margin-right: 450px;
+}
+.no {
+    width: 10%;
+}
+
+/* Poner inactiva alguna sección */
+.inactive{
+    display: none;
+}
+
+
 @media (max-width: 440px) {
     button {
         margin-top: 5px;
@@ -64,5 +115,24 @@ p {
     #up, #down {
         margin-left: 100%;
         margin-right: 100%;
+    }
+}
+
+@media (max-width: 861px) {
+    #question, #continue {
+        width: 100%;
+        min-width: 600px;
+        margin: 50px auto;
+    }
+
+    .respuestas{
+        margin: 0 auto;
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 601px){
+    canvas {
+    margin: 0 auto;
     }
 }

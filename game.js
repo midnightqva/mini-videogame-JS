@@ -1,5 +1,6 @@
 const canvas = document.querySelector("#game");
 const game = canvas.getContext("2d");
+const gameContainer = document.querySelector(".game-container");
 const btnUp = document.querySelector("#up");
 const btnLeft = document.querySelector("#left");
 const btnRight = document.querySelector("#right");
@@ -8,6 +9,10 @@ const livesIcon = document.querySelector("#lives");
 const time = document.querySelector("#time");
 const record = document.querySelector("#record");
 const result = document.querySelector("#result");
+const continueContainer = document.getElementById("continue");
+const yes = document.querySelector(".yes");
+
+yes.addEventListener("click", resetGame);
 
 let canvasSize;
 let elementsSize;
@@ -17,6 +22,7 @@ let lives = 3;
 let timeStart;
 let timePlayer;
 let timeInterval;
+
 
 const playerPosition = {
     x: undefined,
@@ -70,6 +76,7 @@ function startGame(){
     console.log(map, mapRows, mapRowsCol);
 
     showLives(); 
+    
     
     enemiesPositions = [];
     game.clearRect(0,0,canvasSize,canvasSize);
@@ -142,14 +149,14 @@ function levelFail(){
     console.log("Vidas restantes: " + lives);
     
     if(lives <= 0){
-        level = 0;
-        lives = 3;
-        timeStart = undefined;
+        gameContainer.classList.add("inactive");
+        continueContainer.classList.remove("inactive");
     }
-    
     playerPosition.x = undefined;
     playerPosition.y = undefined;
+
     startGame();
+    
 }
 
 function gameWin(){
@@ -183,6 +190,21 @@ function showTime(){
 }
 function showRecord(){
     record.innerHTML = localStorage.getItem("record_time");
+}
+
+function resetGame(){
+    continueContainer.classList.add("inactive");
+    gameContainer.classList.remove("inactive");
+    
+    playerPosition.x = undefined;
+    playerPosition.y = undefined;
+    
+    
+    level= 0;
+    lives = 3;
+    timeStart = undefined;
+    startGame();
+    console.log("Reinicio");
 }
 
 
