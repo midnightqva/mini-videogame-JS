@@ -94,11 +94,11 @@ p {
     margin: 0 auto;
 }
 .yes{
-    width: 10%;
+    width: 12%;
     margin-right: 450px;
 }
 .no {
-    width: 10%;
+    width: 12%;
 }
 
 /* Poner inactiva alguna sección */
@@ -119,15 +119,15 @@ p {
 }
 
 @media (max-width: 861px) {
-    #question, #continue {
+    #question{
         width: 100%;
-        min-width: 600px;
-        margin: 50px auto;
+        height: auto;
+       margin: 50 auto;
     }
 
-    .respuestas{
-        margin: 0 auto;
-        min-width: 600px;
+    .yes{
+
+        margin-right: 250px;
     }
 }
 
