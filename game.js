@@ -11,8 +11,10 @@ const record = document.querySelector("#record");
 const result = document.querySelector("#result");
 const continueContainer = document.getElementById("continue");
 const yes = document.querySelector(".yes");
+const no = document.querySelector(".no");
 
 yes.addEventListener("click", resetGame);
+no.addEventListener("click", closeGame);
 
 let canvasSize;
 let elementsSize;
@@ -192,6 +194,7 @@ function showRecord(){
     record.innerHTML = localStorage.getItem("record_time");
 }
 
+
 function resetGame(){
     continueContainer.classList.add("inactive");
     gameContainer.classList.remove("inactive");
@@ -205,6 +208,9 @@ function resetGame(){
     timeStart = undefined;
     startGame();
     console.log("Reinicio");
+}
+function closeGame(){
+    window.close();
 }
 
 
